@@ -2,7 +2,7 @@
 
 This document outlines the specific AI models and prompts used by the Legal-Hai application during the document analysis process. This information is implemented in `src/server/llm.ts`.
 
-## 1. The Prompts Used
+## The Prompts Used
 
 The application runs a two-step analysis pipeline. Here are the exact system/user prompts being sent to the AI when a document is analyzed:
 
@@ -16,15 +16,3 @@ The application runs a two-step analysis pipeline. Here are the exact system/use
 > *[JSON data from Step 1]*
 > 
 > *A higher score means higher risk to the user signing this document."*
-
-## 2. The Models Used
-
-The AI model used depends on which AI provider is currently configured (`appConfig.provider`). The default vision-capable models mapped for each provider in your codebase are:
-
-*   **OpenAI:** `gpt-4o`
-*   **Anthropic:** `claude-3-5-sonnet-latest`
-*   **Gemini:** `gemini-2.5-pro-preview-05-06`
-*   **Mistral:** `pixtral-large-latest`
-*   **OpenRouter:** `openai/gpt-4o`
-
-*(Note: These can be overridden if an `LLM_MODEL` environment variable is explicitly set in the deployment environment).*
