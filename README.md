@@ -1,73 +1,198 @@
-# Legal-Hai
+# Legal Hai!
 
-Legal-Hai is an AI-powered legal document review and management platform. It allows users to upload legal contracts, analyze them for risks, manage a clause library, and review historical data through a comprehensive dashboard.
+**Understand Any Contract in Seconds**
 
-## Features
+Legal Hai! is an AI-powered legal assistant that enables users to analyze contracts, detect risks, and understand complex legal clauses in plain language before signing.
 
-- **Document Upload:** Upload contract images for AI-powered analysis.
-- **Contract Review:** Deep dive into specific clauses and legal terminology using an integrated AI assistant.
-- **Risk Reports:** Automatically generate risk assessments for uploaded documents to highlight potential legal pitfalls.
-- **Clause Library:** Manage and store frequently used legal clauses.
-- **Dashboard & History:** View past uploads, analyses, and platform usage metrics.
-- **Settings & Preferences:** Configure AI providers (OpenAI, Anthropic, Google, Mistral, OpenRouter) and manage user preferences.
+---
+
+## Overview
+
+Many individuals sign contracts without fully understanding their implications. Legal Hai! addresses this problem by leveraging large language models to provide structured, actionable insights from legal documents.
+
+The application allows users to upload a contract and receive:
+
+* Identified risks
+* Clause-level analysis
+* Plain-language explanations
+* An overall risk assessment
+
+---
+
+## Key Features
+
+### Contract Analysis
+
+Supports PDF, DOCX, and text inputs to extract and process legal content.
+
+### Risk Detection
+
+Identifies potentially harmful or one-sided clauses such as:
+
+* Lack of termination rights
+* Unfair liability terms
+* Non-refundable payment conditions
+* Ownership transfer clauses
+
+### Plain Language Explanation
+
+Transforms complex legal terminology into clear, understandable explanations for non-experts.
+
+### Risk Scoring
+
+Generates an overall contract risk score categorized as Low, Medium, or High.
+
+### Multi-Step AI Pipeline
+
+Implements a structured workflow:
+
+1. Clause extraction
+2. Clause classification
+3. Risk identification
+4. Simplification
+5. Final report generation
+
+---
+
+## Why Not Use a General Chatbot?
+
+General-purpose tools require users to:
+
+* Formulate effective prompts
+* Interpret unstructured outputs
+
+Legal Hai! provides:
+
+* A guided workflow
+* Structured JSON-based outputs
+* Domain-specific analysis
+* Consistent and repeatable results
+
+---
 
 ## Tech Stack
 
-- **Frontend:** React, React Router DOM, Tailwind CSS (Vite)
-- **Backend:** Node.js, Express
-- **Database & Authentication:** Supabase
-- **AI Integration:** Vercel AI SDK (`ai`), supporting multiple models.
+### Frontend
 
-## Getting Started
+* Next.js
+* Tailwind CSS
+* Stitch (UI design)
 
-### Prerequisites
+### Backend
 
-- Node.js (v18 or higher)
-- Supabase account and project
-- API keys for your preferred AI providers (OpenAI, Anthropic, Google, Mistral, etc.)
+* AI Studio (LLM orchestration)
+* Serverless API routes
 
-### Installation
+### AI Providers
 
-1. **Clone the repository:**
-   ```bash
-   git clone https://github.com/Djain2007/Legal-Hai.git
-   cd Legal-Hai
-   ```
+* OpenAI (GPT models)
+* Anthropic (Claude)
+* OpenRouter (multi-model access)
 
-2. **Install dependencies:**
-   ```bash
-   npm install
-   ```
+### Database and Storage
 
-3. **Environment Setup:**
-   Create a `.env` file in the root directory and add your environment variables. Example variables include:
-   ```env
-   VITE_SUPABASE_URL=your_supabase_url
-   VITE_SUPABASE_ANON_KEY=your_supabase_anon_key
-   
-   # Server Environment Variables
-   OPENAI_API_KEY=your_openai_key
-   ANTHROPIC_API_KEY=your_anthropic_key
-   GOOGLE_GENERATIVE_AI_API_KEY=your_google_key
-   # Add others as needed based on the platform's configuration
-   ```
+* Supabase (PostgreSQL and file storage)
 
-4. **Run the development server:**
-   ```bash
-   npm run dev
-   ```
-   The application should start up locally.
+### Deployment
 
-## Scripts
+* Vercel
 
-- `npm run dev`: Starts the development server.
-- `npm run build`: Builds the application for production.
-- `npm start`: Runs the production server.
+---
 
-## Deployment
+## Multi-Model Support
 
-The platform is configured for deployment on Vercel. Ensure you add your environment variables to the Vercel project settings before deploying.
+The application uses a unified abstraction layer to support multiple AI providers. The active provider can be configured via environment variables:
 
-## License
+```env
+LLM_PROVIDER=openai
+OPENAI_API_KEY=your_key
+ANTHROPIC_API_KEY=your_key
+OPENROUTER_API_KEY=your_key
+```
 
-SPDX-License-Identifier: Apache-2.0
+---
+
+## Project Structure
+
+```bash
+legal-hai/
+│── app/
+│── components/
+│── lib/
+│   ├── llm.ts
+│   ├── supabase.ts
+│── api/
+│   ├── upload/
+│   ├── analyze/
+│── prompts/
+│── styles/
+│── README.md
+```
+
+---
+
+## Application Workflow
+
+1. User uploads a contract
+2. Text is extracted from the document
+3. AI pipeline processes the content:
+
+   * Clause extraction
+   * Risk analysis
+   * Simplification
+   * Report generation
+4. Results are rendered in a structured UI
+
+---
+
+## Use Cases
+
+* Freelance agreements
+* Brand collaborations
+* Rental contracts
+* Employment offers
+* Non-disclosure agreements (NDAs)
+
+---
+
+## Example Scenario
+
+A content creator reviews a contract from a social media agency. Legal Hai! identifies:
+
+* No termination rights for the client
+* Full content ownership assigned to the agency
+* Zero liability clause
+* Non-refundable payment terms
+
+The system classifies the contract as High Risk and provides clear explanations for each issue.
+
+---
+
+## Security and Best Practices
+
+* Environment-based API key management
+* No hardcoded credentials
+* Input validation
+* Error handling for API failures
+
+---
+
+## Future Improvements
+
+* Clause highlighting within documents
+* Interactive Q&A with contracts
+* Exportable reports (PDF)
+* Multi-language support
+* Contract comparison tools
+
+---
+
+## Author
+
+Daksh Jain
+
+---
+
+## Conclusion
+
+Legal Hai! is designed to make legal understanding accessible, structured, and efficient, enabling users to make informed decisions before signing any agreement.
