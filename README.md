@@ -145,6 +145,10 @@ The system classifies the contract as High Risk and provides clear explanations 
 * Contract comparison tools
 
 ---
+## Live Demo
+https://legal-hai.vercel.app/
+
+---
 
 ## Conclusion
 
