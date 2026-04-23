@@ -23,7 +23,7 @@ The application allows users to upload a contract and receive:
 
 ### Contract Analysis
 
-Supports PDF, DOCX, and text inputs to extract and process legal content.
+Supports JPG< PNG and then extract text from it and process legal content.
 
 ### Risk Detection
 
@@ -99,38 +99,6 @@ Legal Hai! provides:
 
 ---
 
-## Multi-Model Support
-
-The application uses a unified abstraction layer to support multiple AI providers. The active provider can be configured via environment variables:
-
-```env
-LLM_PROVIDER=openai
-OPENAI_API_KEY=your_key
-ANTHROPIC_API_KEY=your_key
-OPENROUTER_API_KEY=your_key
-```
-
----
-
-## Project Structure
-
-```bash
-legal-hai/
-│── app/
-│── components/
-│── lib/
-│   ├── llm.ts
-│   ├── supabase.ts
-│── api/
-│   ├── upload/
-│   ├── analyze/
-│── prompts/
-│── styles/
-│── README.md
-```
-
----
-
 ## Application Workflow
 
 1. User uploads a contract
@@ -168,15 +136,6 @@ The system classifies the contract as High Risk and provides clear explanations 
 
 ---
 
-## Security and Best Practices
-
-* Environment-based API key management
-* No hardcoded credentials
-* Input validation
-* Error handling for API failures
-
----
-
 ## Future Improvements
 
 * Clause highlighting within documents
@@ -184,12 +143,6 @@ The system classifies the contract as High Risk and provides clear explanations 
 * Exportable reports (PDF)
 * Multi-language support
 * Contract comparison tools
-
----
-
-## Author
-
-Daksh Jain
 
 ---
 
