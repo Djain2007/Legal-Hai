@@ -1,7 +1,3 @@
-# AI Models and Prompts Info
-
-This document outlines the specific AI models and prompts used by the Legal-Hai application during the document analysis process. This information is implemented in `src/server/llm.ts`.
-
 ## The Prompts Used
 
 The application runs a two-step analysis pipeline. Here are the exact system/user prompts being sent to the AI when a document is analyzed:
